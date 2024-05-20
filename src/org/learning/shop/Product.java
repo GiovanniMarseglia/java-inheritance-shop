@@ -5,6 +5,7 @@ public class Product {
     private String name;
     private String description;
     private double price;
+    private double pricewithdiscount;
     private double iva;
 
     public Product(){
@@ -12,10 +13,20 @@ public class Product {
 
     }
 
+
+
+    public void setdiscount(double percentage){
+        pricewithdiscount = getPriceWithIva() - ((getPriceWithIva() * percentage)/100);
+    }
+
     public String getCode() {
 
         return String.format("%06d",code);
 
+    }
+
+    public double getPricewithdiscount() {
+        return pricewithdiscount;
     }
 
     public String getName() {

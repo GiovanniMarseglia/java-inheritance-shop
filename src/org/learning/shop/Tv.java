@@ -6,6 +6,7 @@ public class Tv extends Product{
     public Tv(int size,boolean smart){
         setSize(size);
         setCable(smart);
+
     }
 
     public void setSize(int size) {
@@ -16,8 +17,17 @@ public class Tv extends Product{
         this.smart = smart;
     }
 
+    public void fidelity(){
+        if (smart){
+            super.setdiscount(2);
+        }else{
+            super.setdiscount(10);
+        }
+    }
+
     @Override
     public String toString() {
+
         return "Nome: " + getName() + ", Dimensioni: " + size + ", smart: " + smart + ", prezzo base: " + getPrice() + ", prezzo con iva: " + getPriceWithIva() + ", iva: " + getIva() + ", code: " + getCode();
     }
 }

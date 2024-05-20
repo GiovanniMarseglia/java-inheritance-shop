@@ -17,8 +17,17 @@ public class Smartphone extends Product{
         this.memory = memory;
     }
 
+    public void fidelity(){
+        if(memory<=32){
+            super.setdiscount(5);
+        }else{
+            super.setdiscount(2);
+        }
+    }
+
     @Override
     public String toString() {
+
         return "Nome: " + getName() + ", IMEI: " + imei + ", memory: " + memory + ", prezzo base: " + getPrice() + ", prezzo con iva: " + getPriceWithIva() + ", iva: " + getIva() + ", code: " + getCode();
     }
 

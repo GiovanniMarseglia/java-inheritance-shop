@@ -6,6 +6,7 @@ public class Headphone extends Product{
     public Headphone(String color,boolean cable){
         setColor(color);
         setCable(cable);
+
     }
 
     public void setColor(String color) {
@@ -16,8 +17,16 @@ public class Headphone extends Product{
         this.cable = cable;
     }
 
+    public void fidelity(){
+        if(cable){
+            super.setdiscount(7);
+        }else{
+            super.setdiscount(2);
+        }
+    }
+
     @Override
     public String toString() {
-        return "Nome: " + getName() + ", Colore: " + color + ", Cablato: " + cable + ", prezzo base: " + getPrice() + ", prezzo con iva: " + getPriceWithIva() + ", iva: " + getIva() + ", code: " + getCode();
+        return "Nome: " + getName() + ", Colore: " + color + ", Cablato: " + cable + ", prezzo base: " + getPrice() + ", prezzo con iva: " + getPriceWithIva() + "Prezzo con lo sconto: " +  ", iva: " + getIva() + ", code: " + getCode();
     }
 }

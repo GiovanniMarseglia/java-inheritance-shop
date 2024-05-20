@@ -56,7 +56,6 @@ public class Cart {
                     System.out.println("Sono cuffie wireless?");
                     boolean cable = scanner.nextBoolean();
                     product[counter] = new Headphone(color,cable);
-
                     System.out.println("Inserisci il prezzo");
                     product[counter].setPrice(scanner.nextInt());
                     System.out.println("Inserisci l'iva");
@@ -72,9 +71,38 @@ public class Cart {
             counter++;
         }
 
+
+
+
+        double total=0;
+        double totalDiscount=0;
         for (int i = 0; i < counter; i++) {
+            if (product[i] instanceof Smartphone) {
+                ((Smartphone) product[i]).fidelity();
+            } else if (product[i] instanceof Headphone) {
+                ((Headphone) product[i]).fidelity();
+            } else if (product[i] instanceof Tv) {
+                ((Tv) product[i]).fidelity();
+            }
             System.out.println(product[i].toString());
+
+            total += product[i].getPriceWithIva();
+            totalDiscount += product[i].getPricewithdiscount();
         }
+        System.out.println("Hai la carta fedeltà?");
+        boolean response = scanner.nextBoolean();
+        if (response){
+            System.out.println("il totale da pagare con lo sconto è di: " + totalDiscount);
+        }else{
+            System.out.println("il totale da pagare è di: " + total);
+        }
+
+
+
+
+
+
+
 
 //
         scanner.close();
