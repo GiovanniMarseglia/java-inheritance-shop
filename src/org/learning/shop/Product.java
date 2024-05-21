@@ -8,7 +8,10 @@ public class Product {
     private double pricewithdiscount;
     private double iva;
 
-    public Product(){
+    public Product(int price,int iva,String name){
+        this.price=price;
+        this.iva=iva;
+        this.name=name;
         code = ((int)(Math.random()*100000)+1);
 
     }

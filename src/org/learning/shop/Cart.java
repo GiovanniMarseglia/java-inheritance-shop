@@ -17,6 +17,18 @@ public class Cart {
             System.out.println("Quale prodotto vuoi aggiungere?");
             System.out.println("1:smartphone,2:TV,3 Headphone");
             choice=scanner.nextInt();
+
+            System.out.println("Inserisci il prezzo");
+            int price = scanner.nextInt();
+            System.out.println("Inserisci l'iva");
+            int iva = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Inserisci il nome");
+            String name = scanner.nextLine();
+
+
+
+
             switch (choice) {
                 case 1:
                     //smartphone
@@ -24,30 +36,17 @@ public class Cart {
                     int imei = scanner.nextInt();
                     System.out.println("Inserisci quantità memoria");
                     int memory = scanner.nextInt();
-                    product[counter] = new Smartphone(imei,memory);
+                    product[counter] = new Smartphone(price,iva,name,imei,memory);
 
-                    System.out.println("Inserisci il prezzo");
-                    product[counter].setPrice(scanner.nextInt());
-                    System.out.println("Inserisci l'iva");
-                    product[counter].setIva(scanner.nextInt());
-                    scanner.nextLine();
-                    System.out.println("Inserisci il nome");
-                    product[counter].setName(scanner.nextLine());
+
                     break;
                 case 2:
                     System.out.println("Inserisci dimensioni schermo");
                     int size = scanner.nextInt();
                     System.out.println("E' una smart TV?");
                     boolean smart = scanner.nextBoolean();
-                    product[counter] = new Tv(size,smart);
+                    product[counter] = new Tv(price,iva,name,size,smart);
 
-                    System.out.println("Inserisci il prezzo");
-                    product[counter].setPrice(scanner.nextInt());
-                    System.out.println("Inserisci l'iva");
-                    product[counter].setIva(scanner.nextInt());
-                    scanner.nextLine();
-                    System.out.println("Inserisci il nome");
-                    product[counter].setName(scanner.nextLine());
                     break;
                 case 3:
                     System.out.println("Inserisci colore");
@@ -55,14 +54,8 @@ public class Cart {
                     scanner.nextLine();
                     System.out.println("Sono cuffie wireless?");
                     boolean cable = scanner.nextBoolean();
-                    product[counter] = new Headphone(color,cable);
-                    System.out.println("Inserisci il prezzo");
-                    product[counter].setPrice(scanner.nextInt());
-                    System.out.println("Inserisci l'iva");
-                    product[counter].setIva(scanner.nextInt());
-                    scanner.nextLine();
-                    System.out.println("Inserisci il nome");
-                    product[counter].setName(scanner.nextLine());
+                    product[counter] = new Headphone(price,iva,name,color,cable);
+
                     break;
                 default:
                     System.out.println("Hai inserito un valore non valido...riprova");

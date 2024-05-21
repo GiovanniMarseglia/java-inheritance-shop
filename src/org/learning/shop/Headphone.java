@@ -3,7 +3,8 @@ package org.learning.shop;
 public class Headphone extends Product{
     private String color;
     private boolean cable=true;
-    public Headphone(String color,boolean cable){
+    public Headphone(int price,int iva,String name,String color,boolean cable){
+        super(price,iva,name);
         setColor(color);
         setCable(cable);
 
